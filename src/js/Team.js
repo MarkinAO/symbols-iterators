@@ -8,15 +8,15 @@ export default class Team {
     let index = 0;
     return {
       next() {
-        if (index === team.length) {
+        if (index < team.length) {
           return {
-            value: undefined,
-            done: true,
+            value: team[index++],
+            done: false,            
           };
         }
         return {
-          value: team[index++],
-          done: false,
+          value: undefined,
+          done: true,
         };
       },
     };
